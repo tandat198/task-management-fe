@@ -37,7 +37,7 @@ class App extends Component {
                             </Col>
                         </Row>
                     </Form>
-                    <Table striped bordered hover>
+                    <Table className='mt-1' striped bordered hover>
                         <thead>
                             <tr>
                                 <th>#</th>
