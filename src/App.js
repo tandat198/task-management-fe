@@ -19,12 +19,7 @@ class App extends Component {
                                 <Form.Group className='d-b' controlId='formBasicEmail'>
                                     <Form.Control type='text' placeholder='Search task' />
                                 </Form.Group>
-                            </Col>
-                            <Col xs={4} lg={1}>
-                                <Button className='w-100' variant='outline-primary' type='submit'>
-                                    Search
-                                </Button>
-                            </Col>
+                            </Col> 
                             <Col xs={4} lg={2}>
                                 <Button className='w-100' variant='outline-secondary' type='button'>
                                     Show Task List
