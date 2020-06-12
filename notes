@@ -1,0 +1,3 @@
+Phân biệt state, props
+    state là dữ liệu được tạo ra từ bên trong 1 component
+    props là dữ liệu nhận được từ 1 component khác

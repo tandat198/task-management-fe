@@ -1,7 +1,0 @@
-Click vào button Add Task thì show ra Modal, khi Modal được bật thì click button Cancel để tắt Modal
-Phân biệt state, props
-    state là dữ liệu được tạo ra từ bên trong 1 component
-    props là dữ liệu nhận được từ 1 component khác
-Cách thực hiện:
-    Đặt một state chứa trạng thái tắt mở của Modal
-    Sử dụng sự kiện onClick để lắng nghe rồi từ đó thay đổi trạng thái tắt mở
