@@ -68,17 +68,17 @@ class App extends Component {
                 <Container fluid>
                     <Form className='mt-3'>
                         <Row>
-                            <Col xs={4} lg={8}>
+                            <Col xs={12} lg={8}>
                                 <Form.Group className='d-b' controlId='formBasic'>
                                     <Form.Control onChange={this.handleSearch} type='text' placeholder='Search task' />
                                 </Form.Group>
                             </Col>
-                            <Col xs={4} lg={2}>
+                            <Col xs={6} lg={2}>
                                 <Button onClick={this.toggleTaskList} className='w-100' variant='outline-secondary' type='button'>
                                     {this.state.showTaskList ? "Hide Task List" : "Show Task List"}
                                 </Button>
                             </Col>
-                            <Col xs={4} lg={2}>
+                            <Col xs={6} lg={2}>
                                 <Button onClick={this.toggleTaskModal} className='w-100' variant='primary' type='button'>
                                     Add Task
                                 </Button>
