@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
+import SearchForm from "./components/SearchForm";
+import MainForm from "./components/MainForm";
+import TaskItem from "./components/TaskItem";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
@@ -78,71 +76,17 @@ class App extends Component {
         this.setState({ tasks: this.state.tasks.filter((task) => task.id !== id) });
     };
 
+    submitSearchForm = (e) => {
+        e.preventDefault();
+    };
+
     render() {
         return (
             <div>
                 <Container>
-                    <Row className='mt-3'>
-                        <Col xs={12} sm={8} lg={10}>
-                            <Form onSubmit={this.submitSearchForm}>
-                                <Form.Group className='d-b' controlId='formBasic'>
-                                    <Form.Control onChange={this.handleSearch} type='text' placeholder='Search task' />
-                                </Form.Group>
-                            </Form>
-                        </Col>
-                        <Col xs={12} sm={4} lg={2}>
-                            <Button onClick={this.toggleForm} className='w-100' variant='primary' type='button'>
-                                Show Form
-                            </Button>
-                        </Col>
-                    </Row>
-                    {this.state.showForm && (
-                        <Form className='mt-2' onSubmit={this.submitForm}>
-                            <Row>
-                                <Col xs={8} lg={5} xl={6}>
-                                    <Form.Group className='d-b'>
-                                        <Form.Control value={this.state.taskName} onChange={this.handleTaskName} type='text' placeholder='Enter task name' />
-                                    </Form.Group>
-                                </Col>
-                                <Col xs={4} lg={2}>
-                                    <Form.Group controlId='exampleForm.ControlSelect1'>
-                                        <Form.Control value={this.state.taskStatus} onChange={this.handleStatus} as='select'>
-                                            <option value={-1}>Status</option>
-                                            <option value={0}>Not Started</option>
-                                            <option value={1}>In Progress</option>
-                                            <option value={2}>Finished</option>
-                                        </Form.Control>
-                                    </Form.Group>
-                                </Col>
-                                <Col xs={12} lg={5} xl={4}>
-                                    <Button type='submit' className='mr-2' variant='outline-primary'>
-                                        Add Task
-                                    </Button>
-                                    <Button onClick={this.resetInput} type='reset' className='mx-2' variant='outline-danger'>
-                                        Reset
-                                    </Button>
-                                    <Button onClick={this.clearAll} type='button' className='ml-2' variant='danger'>
-                                        Clear All Tasks
-                                    </Button>
-                                </Col>
-                            </Row>
-                        </Form>
-                    )}
-                    {this.state.tasks
-                        .filter((task) => task.name.includes(this.state.search))
-                        .map((task, i) => (
-                            <Alert key={i} className='clearfix' variant={task.status === "Finished" ? "success" : "secondary"}>
-                                <Row>
-                                    <Col className='d-flex align-items-center'>{task.name}</Col>
-                                    <Col className='d-flex align-items-center'>{task.status}</Col>
-                                    <Col>
-                                        <Button onClick={() => this.deleteTask(task.id)} className='float-right' variant='danger'>
-                                            Delete
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Alert>
-                        ))}
+                    <SearchForm submitSearchForm={this.submitSearchForm} handleSearch={this.handleSearch} toggleForm={this.toggleForm} />
+                    {this.state.showForm && <MainForm taskName={this.state.taskName} taskStatus={this.state.taskStatus} submitForm={this.submitForm} handleTaskName={this.handleTaskName} handleStatus={this.handleStatus} resetInput={this.resetInput} clearAll={this.clearAll} />}
+                    {this.state.tasks.length === 0 ? <div className='text-center mt-2'>You don't have any task</div> : this.state.tasks.filter((task) => task.name.includes(this.state.search)).map((task) => <TaskItem key={task.id} task={task} deleteTask={this.deleteTask} />)}
                 </Container>
             </div>
         );
