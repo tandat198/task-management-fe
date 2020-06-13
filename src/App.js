@@ -86,7 +86,7 @@ class App extends Component {
                 <Container>
                     <SearchForm submitSearchForm={this.submitSearchForm} handleSearch={this.handleSearch} toggleForm={this.toggleForm} />
                     {this.state.showForm && <MainForm taskName={this.state.taskName} taskStatus={this.state.taskStatus} submitForm={this.submitForm} handleTaskName={this.handleTaskName} handleStatus={this.handleStatus} resetInput={this.resetInput} clearAll={this.clearAll} />}
-                    {this.state.tasks.length === 0 ? <div className='text-center mt-2'>You don't have any task</div> : this.state.tasks.filter((task) => task.name.includes(this.state.search)).map((task) => <TaskItem key={task.id} task={task} deleteTask={this.deleteTask} />)}
+                    {this.state.tasks.length === 0 ? <div className='text-center mt-2'>You don't have any task</div> : <div className='mt-2'>this.state.tasks.filter((task) => task.name.includes(this.state.search)).map((task) => <TaskItem key={task.id} task={task} deleteTask={this.deleteTask} />)</div>}
                 </Container>
             </div>
         );
