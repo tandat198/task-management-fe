@@ -16,13 +16,13 @@ class App extends Component {
                     <Row className='mt-3'>
                         <Col xs={12} sm={8} lg={10}>
                             <Form>
-                                <Form.Group className='d-b' controlId='formBasic'>
+                                <Form.Group className='d-b'>
                                     <Form.Control type='text' placeholder='Search task' />
                                 </Form.Group>
                             </Form>
                         </Col>
                         <Col xs={12} sm={4} lg={2}>
-                            <Button className='w-100' variant='primary' type='button'>
+                            <Button type='button' className='w-100' variant='primary'>
                                 Show Form
                             </Button>
                         </Col>
@@ -35,7 +35,7 @@ class App extends Component {
                                 </Form.Group>
                             </Col>
                             <Col xs={12} lg={2}>
-                                <Form.Group controlId='exampleForm.ControlSelect1'>
+                                <Form.Group>
                                     <Form.Control as='select'>
                                         <option value={-1}>Status</option>
                                         <option value={0}>Not Started</option>
@@ -45,12 +45,12 @@ class App extends Component {
                                 </Form.Group>
                             </Col>
                             <Col xs={6} lg={2}>
-                                <Button type='submit' className='mb-2' variant='outline-primary w-100'>
+                                <Button type='submit' className='mb-2 w-100' variant='outline-primary'>
                                     Add Task
                                 </Button>
                             </Col>
                             <Col xs={6} lg={2}>
-                                <Button type='reset' className='mb-2' variant='outline-danger w-100'>
+                                <Button type='reset' className='mb-2 w-100' variant='outline-danger'>
                                     Reset
                                 </Button>
                             </Col>
