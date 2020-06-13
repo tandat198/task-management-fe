@@ -6,9 +6,9 @@ if (name.length === 0) {
 
 // Nếu tuổi lớn hơn hoặc bằng 18 thì console.log("You are old")
 // Còn lại thì console.log("You are young")
-const age = 10;
-if (age >= 18) {
-    console.log("You are old");
-} else {
-    console.log('"You are young"');
-}
+// const age = 10;
+// if (age >= 18) {
+//     console.log("You are old");
+// } else {
+//     console.log('"You are young"');
+// }

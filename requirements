@@ -1,5 +1,6 @@
-Click vào button Show Task List thì show ra danh sách task, click lần nữa thì ẩn task list
-Cách thực hiện:
-    Đặt một state chứa trạng thái tắt mở của list
-    Sử dụng sự kiện onClick để lắng nghe rồi thay đổi state
-Click vào button Add Task thì show ra Modal, khi Modal được bật thì click button Cancel để tắt Modal
+Click vào button Show Form thì hiển thị Form nhập task
+Lấy giá trị từ 2 input (task name, task status), khi click vào button Add Task thì thêm task (tạo id kèm theo)
+Render ra danh sách task (sử dụng hàm map)
+Click vào button Reset thì reset giá trị ở trong input trở về mặc định (sử dụng two-way binding)
+Click vào button Clear All Tasks thì xóa tắt cả tasks
+Nhập vào trong input search task thì lọc ra những task có name chứa input đó (sử dụng hàm filter)
