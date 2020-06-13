@@ -27,14 +27,14 @@ class App extends Component {
                             </Button>
                         </Col>
                     </Row>
-                    <Form className='mt-2'>
+                    <Form className='my-3'>
                         <Row>
-                            <Col xs={8} lg={5} xl={6}>
+                            <Col xs={12} lg={6} xl={4}>
                                 <Form.Group className='d-b'>
                                     <Form.Control type='text' placeholder='Enter task name' />
                                 </Form.Group>
                             </Col>
-                            <Col xs={4} lg={2}>
+                            <Col xs={12} lg={2}>
                                 <Form.Group controlId='exampleForm.ControlSelect1'>
                                     <Form.Control as='select'>
                                         <option value={-1}>Status</option>
@@ -44,14 +44,18 @@ class App extends Component {
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
-                            <Col xs={12} lg={5} xl={4}>
-                                <Button type='submit' className='mr-2' variant='outline-primary'>
+                            <Col xs={6} lg={2}>
+                                <Button type='submit' className='mb-2' variant='outline-primary w-100'>
                                     Add Task
                                 </Button>
-                                <Button type='reset' className='mx-2' variant='outline-danger'>
+                            </Col>
+                            <Col xs={6} lg={2}>
+                                <Button type='reset' className='mb-2' variant='outline-danger w-100'>
                                     Reset
                                 </Button>
-                                <Button type='button' className='ml-2' variant='danger'>
+                            </Col>
+                            <Col xs={12} xl={2}>
+                                <Button type='button' className='mb-2 w-100' variant='danger'>
                                     Clear All Tasks
                                 </Button>
                             </Col>
