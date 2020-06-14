@@ -97,9 +97,9 @@ class App extends Component {
                         />
                     )}
                     {this.state.tasks.length === 0 ? (
-                        <div className='text-center mt-2'>You don't have any task</div>
+                        <div className='text-center mt-5'>You don't have any task</div>
                     ) : (
-                        <div className='mt-2'>
+                        <div className='mt-5'>
                             {this.state.tasks
                                 .filter((task) => task.name.includes(this.state.search))
                                 .map((task) => (
