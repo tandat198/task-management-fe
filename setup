@@ -2,3 +2,6 @@ Cài đặt Visual Studio Code
 Cài đặt extensions quan trọng của VSCode
     ESLint (Giúp code clean hơn)
     Prettier (Format code nhanh)
+Cài yarn
+    nhập vào terminal: npm i -g yarn
+Clone project về rồi yarn install
